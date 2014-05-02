@@ -24,8 +24,9 @@ Building in XCode
 =================
 
 Once the distribution is built, you need to use kivy-ios to build you XCode
-project. Once done, add a reference to the
+project. Once done, ensure you have a reference to the
 "libssl.a" file in the "libs" folder in order for the XCode compile to work.
+This should be done automatically, but we mention it for safety's sake.
 
 Credits
 =======
