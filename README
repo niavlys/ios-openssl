@@ -1,9 +1,35 @@
+About
+=====
+
 This project provides for the easy inclusion of OpenSLL when building 
 Kivy apps for iOS.
 
     http://kivy.org
     https://github.com/kivy
+    https://github.com/kivy/kivy-ios
 
+How it works
+============
+
+Kivy uses the kivy-ios project to build a Kivy application "distribution"
+for iOS. This distribution is built by running the "tools/build-all.sh"
+script. This script compiles and packages all of the Kivy dependencies.
+
+By default, this package does not include OpenSLL. In order to include it,
+you need to edit the "tools/build-all.sh" file and uncomment the
+"build-openssl.sh" line. Uncommenting this line will result in this repo being
+cloned locally and used to build the OpenSLL libraries required.
+
+Building in XCode
+=================
+
+Once the distribution is built, you need to use kivy-ios to build you XCode
+project. Once done, add a reference to the
+"libssl.a" file in the "libs" folder in order for the XCode compile to work.
+
+Credits
+=======
+    
 The project derives from
 https://github.com/st3fan/ios-openssl. Please refer here for detail.
 This fork adds a script specifically for kivy deployment whilst trying
