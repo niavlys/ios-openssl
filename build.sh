@@ -115,3 +115,6 @@ lipo \
 rm -rf "/tmp/openssl-${OPENSSL_VERSION}-*"
 rm -rf "/tmp/openssl-${OPENSSL_VERSION}-*.*-log"
 
+# Extract the source for linking
+tar xfz "openssl-${OPENSSL_VERSION}.tar.gz"
+mv "openssl-${OPENSSL_VERSION}" "openssl"
