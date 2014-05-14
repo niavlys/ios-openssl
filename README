@@ -25,8 +25,14 @@ Building in XCode
 
 Once the distribution is built, you need to use kivy-ios to build you XCode
 project. Once done, ensure you have a reference to the
-"libssl.a" file in the "libs" folder in order for the XCode compile to work.
-This should be done automatically, but we mention it for safety's sake.
+"libssl.a" and the "libcrypto.a" file in the "libs" folder in order
+for the XCode compile to work. This is done by going to the "Linked Frameworks
+and Libraries" section under the "General" project tab and clicking "+" at
+the bottom and then selecting these files.
+
+Note: There is a know bug in XCode that inserts the incorrect path when
+browsing to add a library. IF you get a "directory not found" error, please
+refer to this url: http://stackoverflow.com/questions/19061772/directory-not-found-apple-mach-o-linker-warning-but-library-search-path-and-fram
 
 Credits
 =======
