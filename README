@@ -20,6 +20,11 @@ you need to edit the "tools/build-all.sh" file and uncomment the
 "build-openssl.sh" line. Uncommenting this line will result in this repo being
 cloned locally and used to build the OpenSLL libraries required.
 
+As the build process is rather long, the binaries will only be built if
+"libssl.a" is not found in the "<kivy-ios>/build/lib" folder. Delete this
+file to force a rebuild. Delete "<kivy-ios>/tmp/openssl" to force a
+recloning of this repo for the latest source code.
+
 Building in XCode
 =================
 
