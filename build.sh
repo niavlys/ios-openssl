@@ -85,8 +85,8 @@ build()
 build "BSD-generic32" "armv7" "${IPHONEOS_GCC}" "${IPHONEOS_SDK}" ""
 build "BSD-generic32" "armv7s" "${IPHONEOS_GCC}" "${IPHONEOS_SDK}" ""
 build "BSD-generic64" "arm64" "${IPHONEOS_GCC}" "${IPHONEOS_SDK}" ""
-build "BSD-generic32" "i386" "${IPHONESIMULATOR_GCC}" "${IPHONESIMULATOR_SDK}" ""
-build "BSD-generic64" "x86_64" "${IPHONESIMULATOR_GCC}" "${IPHONESIMULATOR_SDK}" "-DOPENSSL_NO_ASM"
+#build "BSD-generic32" "i386" "${IPHONESIMULATOR_GCC}" "${IPHONESIMULATOR_SDK}" ""
+#build "BSD-generic64" "x86_64" "${IPHONESIMULATOR_GCC}" "${IPHONESIMULATOR_SDK}" "-DOPENSSL_NO_ASM"
 
 #
 
@@ -98,18 +98,18 @@ lipo \
     "/tmp/openssl-${OPENSSL_VERSION}-armv7/lib/libcrypto.a" \
     "/tmp/openssl-${OPENSSL_VERSION}-armv7s/lib/libcrypto.a" \
     "/tmp/openssl-${OPENSSL_VERSION}-arm64/lib/libcrypto.a" \
-    "/tmp/openssl-${OPENSSL_VERSION}-i386/lib/libcrypto.a" \
-    "/tmp/openssl-${OPENSSL_VERSION}-x86_64/lib/libcrypto.a" \
     -create -output lib/libcrypto.a
+    #"/tmp/openssl-${OPENSSL_VERSION}-i386/lib/libcrypto.a" \
+    #"/tmp/openssl-${OPENSSL_VERSION}-x86_64/lib/libcrypto.a" \
 
 
 lipo \
     "/tmp/openssl-${OPENSSL_VERSION}-armv7/lib/libssl.a" \
     "/tmp/openssl-${OPENSSL_VERSION}-armv7s/lib/libssl.a" \
     "/tmp/openssl-${OPENSSL_VERSION}-arm64/lib/libssl.a" \
-    "/tmp/openssl-${OPENSSL_VERSION}-i386/lib/libssl.a" \
-    "/tmp/openssl-${OPENSSL_VERSION}-x86_64/lib/libssl.a" \
     -create -output lib/libssl.a
+    #"/tmp/openssl-${OPENSSL_VERSION}-i386/lib/libssl.a" \
+    #"/tmp/openssl-${OPENSSL_VERSION}-x86_64/lib/libssl.a" \
 
 
 rm -rf "/tmp/openssl-${OPENSSL_VERSION}-*"
